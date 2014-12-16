@@ -1,0 +1,30 @@
+<div>
+    <h3>Registro de usuarios</h3>
+    <form novalidate name="formCrearUsuario">
+        <hr class="colorgraph"> 
+        <div class="form-group" show-errores-registro-usuarios>
+            <input required type="text" name="name" id="name" class="form-control input-lg" placeholder="Nombre completo" tabindex="1" ng-model="usuario.name">
+            <p class="help-block" ng-if="formCrearUsuario.name.$error.required">Por favor, complete el nombre</p>
+        </div>
+        <div class="form-group" show-errores-registro-usuarios>
+            <input required type="email" name="email" id="email" class="form-control input-lg" placeholder="Correo electrónico" tabindex="2" ng-model="usuario.email">
+            <p class="help-block" ng-if="formCrearUsuario.email.$error.required">Por favor, compelete el email</p>
+            <p class="help-block" ng-if="formCrearUsuario.email.$error.email">Por favor, indique un email correcto</p>
+            <p class="help-block" ng-if="isMailRegistrado()">Email en uso</p>
+        </div>
+        <div class="form-group" show-errores-registro-usuarios>
+            <input required type="password" name="password" id="password" class="form-control input-lg" placeholder="Contraseña" tabindex="4" ng-model="usuario.password">
+            <p class="help-block" ng-if="formCrearUsuario.password.$error.required">La contraseña es obligatoria</p>
+            <p class="help-block" ng-if="isValidaPass()">La constraseña debe de tener una longitud mínima de 8 caracteres</p>
+        </div>
+        <div class="form-group" show-errores-registro-usuarios>
+            <input required type="checkbox" ng-model="usuario.accept">
+            Aceptas las <a href="http://corporate.tuenti.com/es/legal-decalogue">Condiciones de uso</a> y la <a href="http://corporate.tuenti.com/es/legal-decalogue">Política de privacidad</a> de Padyu y que Padyu te envíe comunicaciones, incluso por vía electrónica. Lee un resumen en el <a href="http://corporate.tuenti.com/es/legal-decalogue">Decálogo de las Condiciones de uso</a>
+            <p class="help-block" ng-if="userForm.name.$error.required">Debe aceptar las condiciones de uso para registrarse</p>
+        </div>
+        <hr class="colorgraph">
+        <!--<div class="row" algoX>-->
+        <!--<input type="submit" value="Crear mi cuenta" ng-click="crearCuenta()" class="btn btn-primary btn-block btn-lg" tabindex="6">-->
+        <button class="btn btn-primary" ng-click="crearCuenta()">Add User</button>
+    </form>
+</div>
