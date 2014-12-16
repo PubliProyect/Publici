@@ -1,0 +1,35 @@
+.logoCabecera{
+    max-height: 150px;    
+    max-width: 190px;    
+}
+.pd_footer
+{
+    vertical-align: text-top;
+    vertical-align: top;
+    color: #e1e1e1;
+    background-color: #4c4b50;    
+    height: 210px;
+    padding-top: 10px;
+}
+
+.vcenter {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;    
+}
+
+#wrap
+{
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -2px;
+}
+
+.form-group .help-block {
+  display: none;
+}
+ 
+.form-group.has-error .help-block {
+  display: block;
+}

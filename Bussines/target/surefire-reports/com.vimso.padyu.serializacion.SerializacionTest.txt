@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.vimso.padyu.serializacion.SerializacionTest
+-------------------------------------------------------------------------------
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.395 sec - in com.vimso.padyu.serializacion.SerializacionTest

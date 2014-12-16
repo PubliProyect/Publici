@@ -1,0 +1,60 @@
+<div>
+    <div class="container">
+        <div class="row" align="center">
+            <h3>Registro de usuarios</h3>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <form novalidate name="formCrearUsuario">
+                    <hr class="colorgraph"> 
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12">
+                            <div class="form-group" show-errores-registro-usuarios>
+                                <input required type="text" name="name" id="name" class="form-control input-lg" required placeholder="Nombre completo" tabindex="1" ng-model="usuario.name">
+                                <p class="help-block" ng-if="formCrearUsuario.name.$error.required">Por favor, complete el nombre</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12">
+                            <div class="form-group" show-errores-registro-usuarios>
+                                <input required type="email" name="email" id="email" class="form-control input-lg" placeholder="Correo electrónico" tabindex="2" ng-model="usuario.email" >
+                                <p class="help-block" ng-if="formCrearUsuario.email.$error.required">Por favor, compelete el correo electrónico</p>
+                                <p class="help-block" ng-if="formCrearUsuario.email.$error.email">Por favor, indique un correo electrónico correcto</p>                                
+                            </div>
+                        </div>
+                    </div>                        
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12">
+                            <div class="form-group" show-errores-registro-usuarios>
+                                <input required type="password" name="password" id="password" class="form-control input-lg" placeholder="Contraseña" tabindex="4" ng-model="usuario.password" ng-minlength="8">
+                                <p class="help-block" ng-if="formCrearUsuario.password.$error.required">La contraseña es obligatoria</p>
+                                <p class="help-block" ng-if="formCrearUsuario.password.$error.minlength">La constraseña debe de tener una longitud mínima de 8 caracteres</p>
+                            </div>
+                        </div>
+                    </div>			
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group" show-errores-registro-usuarios>
+                                <input required type="checkbox" name="acepto" ng-model="usuario.accept">
+                                Aceptas las <a href="http://corporate.tuenti.com/es/legal-decalogue">Condiciones de uso</a> y la <a href="http://corporate.tuenti.com/es/legal-decalogue">Política de privacidad</a> de Padyu y que Padyu te envíe comunicaciones, incluso por vía electrónica. Lee un resumen en el <a href="http://corporate.tuenti.com/es/legal-decalogue">Decálogo de las Condiciones de uso</a>
+                                <p class="help-block" ng-if="formCrearUsuario.acepto.$error.required">Debe aceptar las condiciones de uso para registrarse</p>
+                            </div>
+                        </div>
+                    </div>                    
+                    <div class="alert alert-dismissable alert-danger" ng-show="errorRegistro" contenteditable="true">                        
+                        <h4>Error al registrar usuario</h4>
+                        <strong>Warning!</strong> Best check yo self, you're not looking too good. <a href="#" class="alert-link">alert link</a>
+                    </div>
+                    <hr class="colorgraph">
+                    <div class="row">
+                        <div class="col-md-offset-2 col-md-8">
+                            <input type="submit" value="Crear mi cuenta" ng-click="crearCuenta()" class="btn btn-primary btn-block btn-lg" tabindex="6">
+                        </div>
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
