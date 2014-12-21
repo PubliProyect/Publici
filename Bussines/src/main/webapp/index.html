@@ -19,7 +19,7 @@
     <body ng-controller="homeController">
         <div id="wrap">
             <!--Cabecera-->
-            <div class="container">
+            <div id="cabecera" class="container">
                 <div class="row" >
                     <div class="col-md-1 vcenter">
                         <img class="logoCabecera" src="img/ImagenMarcaServlet" alt="Padyu">
@@ -38,11 +38,12 @@
             <!--Cuerpo-->
             <div ng-view>
             </div>
-
+            
+            <div id="push"></div> 
         </div>
 
         <!--Pie-->
-        <div id="footer" class="pd_footer">
+        <div id="footer">
             <div class="container">
                 <div class="row">
                     <div class="col-md-2 ">
