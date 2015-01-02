@@ -14,9 +14,9 @@
             <artifactId>Dominio</artifactId>
             <version>1.0-SNAPSHOT</version>
             <type>jar</type>
-        </dependency>        
+        </dependency>
         <dependency>
-            <groupId>com.vimso.fw</groupId>
+            <groupId>com.vimso.padyu</groupId>
             <artifactId>VimsoUtils</artifactId>
             <version>1.0-SNAPSHOT</version>
             <type>jar</type>
