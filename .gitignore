@@ -1,22 +1,5 @@
-/target/
-/Api/target/Bussines/target/classes Bussines/target/dependency-maven-plugin-markers Bussines/target/endorsed Bussines/target/generated-sources Bussines/target/maven-archiver Bussines/target/padyu Bussines/target/padyu.war Bussines/target/sonar Bussines/target/surefire-reports Bussines/target/test-classes
-Dominio/target/classes Dominio/target/dependency-maven-plugin-markers Dominio/target/Dominio-1.0-SNAPSHOT.jar Dominio/target/generated-sources Dominio/target/maven-archiver Dominio/target/sonar Dominio/target/surefire
-Api/target/Api-1.0-SNAPSHOT.jar Api/target/classes Api/target/dependency-maven-plugin-markers Api/target/generated-sources Api/target/maven-archiver Api/target/sonar Api/target/surefire
-Api/target
-Api/target
-Bussines/target/classes Bussines/target/dependency-maven-plugin-markers Bussines/target/endorsed Bussines/target/generated-sources Bussines/target/maven-archiver Bussines/target/padyu Bussines/target/padyu.war Bussines/target/sonar Bussines/target/surefire-reports Bussines/target/test-classes
-Dominio/target
+Api/target/
 Bussines/target/
-Bussines/target
-Bussines/target/classes Bussines/target/dependency-maven-plugin-markers Bussines/target/endorsed Bussines/target/generated-sources Bussines/target/maven-archiver Bussines/target/padyu Bussines/target/padyu.war Bussines/target/sonar Bussines/target/surefire-reports Bussines/target/test-classes
-Bussines/target/
-Bussines/target
-Bussines/target/classes Bussines/target/dependency-maven-plugin-markers Bussines/target/endorsed Bussines/target/generated-sources Bussines/target/maven-archiver Bussines/target/padyu Bussines/target/padyu.war Bussines/target/sonar Bussines/target/surefire-reports Bussines/target/test-classes
-/VimsoDomain/VimsoDomain/target/
-/vimsoDomain/target
-/VimsoDomain/target/
-/VimsoUtil/target/
-/VimsoUtil/target
-/VimsoDomain/target/*
-/VimsoUtil/target/*
-
+Dominio/target/
+VimsoUtils/target/
+VimsoDomain/target/
