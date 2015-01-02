@@ -13,5 +13,10 @@ Bussines/target/
 Bussines/target
 Bussines/target/classes Bussines/target/dependency-maven-plugin-markers Bussines/target/endorsed Bussines/target/generated-sources Bussines/target/maven-archiver Bussines/target/padyu Bussines/target/padyu.war Bussines/target/sonar Bussines/target/surefire-reports Bussines/target/test-classes
 /VimsoDomain/VimsoDomain/target/
-/vimsoDomain/target/
+/vimsoDomain/target
 /VimsoDomain/target/
+/VimsoUtil/target/
+/VimsoUtil/target
+/VimsoDomain/target/*
+/VimsoUtil/target/*
+
