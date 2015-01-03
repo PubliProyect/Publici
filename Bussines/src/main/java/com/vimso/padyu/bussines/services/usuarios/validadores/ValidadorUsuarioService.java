@@ -44,17 +44,21 @@ public class ValidadorUsuarioService implements IValidardorUsuarioServices {
         //<editor-fold defaultstate="collapsed" desc="Validaciones de integridad">
         
         List<Usuario> usuariosSegunCriterio= usuarioServices.buscarUsuario(usuario.getNombre(),usuario.getMail());
-        
-        if (!usuariosSegunCriterio.isEmpty()) {
-            //Hay usuarios con ese nombre ¿?
-            if (!usuariosSegunCriterio.stream().filter(s -> s.getNombre().equals(usuario.getNombre())).collect(Collectors.toList()).isEmpty()) {
-                respuesta.addMensajeKO(Mensaje.NOMBRE_EN_USO);
-            }
-            //Hay usuarios con ese mail
-            if (!usuariosSegunCriterio.stream().filter(s -> s.getMail().equals(usuario.getMail())).collect(Collectors.toList()).isEmpty()) {
-                respuesta.addMensajeKO(Mensaje.MAIL_EN_USO);
-            }  
 
+        if (!usuariosSegunCriterio.isEmpty()) {
+            boolean usuarioEnUso;
+            boolean mailEnUso;
+            
+            for (Usuario usuarioSegunCriterio : usuariosSegunCriterio) {
+                //Detecto si existen usuarios con ese nombre 
+                if (usuarioSegunCriterio.getNombre().equals(usuario.getNombre())) {
+                    respuesta.addMensajeKO(Mensaje.NOMBRE_EN_USO);
+                }
+                //Detecto si existen usuarios con ese mail 
+                if (usuarioSegunCriterio.getMail().equals(usuario.getMail())) {
+                    respuesta.addMensajeKO(Mensaje.MAIL_EN_USO);
+                }
+            }
         }
         
 //</editor-fold>
