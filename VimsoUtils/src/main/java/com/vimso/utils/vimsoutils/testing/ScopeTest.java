@@ -11,5 +11,7 @@ public class ScopeTest {
     public static final String TESTING_SCOPE_ALL="ALL";
     public static final String TESTING_SCOPE_INTEGRACION="INTEGRACION";
     public static final String TESTING_SCOPE_CI="CI";
-
+    
+    private ScopeTest() {
+    }
 }

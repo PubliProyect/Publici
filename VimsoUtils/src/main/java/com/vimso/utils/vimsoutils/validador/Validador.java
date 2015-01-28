@@ -13,6 +13,6 @@ import java.lang.annotation.Target;
 @Target(ElementType.METHOD)
 public @interface Validador {
 
-    public Class[] Validadores();
+    public Class[] validadores();
                 
 }

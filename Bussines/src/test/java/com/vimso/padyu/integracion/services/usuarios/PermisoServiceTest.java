@@ -54,7 +54,7 @@ public class PermisoServiceTest {
     
     @Before
     public void setUp() {
-        pobladorBBD.PobladorBBDD();
+        pobladorBBD.pobladorBBDD();
     }
     
     @After

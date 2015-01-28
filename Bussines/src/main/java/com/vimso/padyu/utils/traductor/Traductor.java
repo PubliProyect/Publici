@@ -43,7 +43,7 @@ public class Traductor implements ITraductor{
                         }
 
                     } catch (Exception e) {
-                        LOGGER.log(Level.SEVERE, "Se ha producido un error al intentar realizar una traducción");
+                        LOGGER.log(Level.SEVERE, "Se ha producido un error al intentar realizar una traducción",e);
                         String messageLog;
                         if (men.getClaveMensaje() != null) {
                             messageLog=String.format("No se puede encontrar la traducicón para el parámetro: {0}", men.getClaveMensaje());

@@ -8,8 +8,7 @@ import com.vimso.utils.vimsoutils.respuesta.IRespuesta;
  */
 public abstract class RespuestaComponentesAbstrac implements IRespuesta{
 
-    public boolean isMultiple()
-    {
+    public boolean isMultiple(){
         return this.getMensajes() != null && this.getMensajes().size() <= 1;
     }
 

@@ -63,7 +63,7 @@ public class CrearUsuariosWSTest {
 
     @Before
     public void setUp() {
-        pobladorBBD.PobladorBBDD();
+        pobladorBBD.pobladorBBDD();
     }
 
     @After

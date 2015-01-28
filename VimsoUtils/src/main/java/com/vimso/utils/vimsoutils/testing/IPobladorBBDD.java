@@ -6,6 +6,6 @@ package com.vimso.utils.vimsoutils.testing;
  */
 public interface IPobladorBBDD {
     
-    public void PobladorBBDD();
+    public void pobladorBBDD();
 
 }

@@ -45,8 +45,6 @@ public class ValidadorUsuarioService implements IValidardorUsuarioServices {
         List<Usuario> usuariosSegunCriterio= usuarioServices.buscarUsuario(usuario.getNombre(),usuario.getMail());
 
         if (!usuariosSegunCriterio.isEmpty()) {
-            boolean usuarioEnUso;
-            boolean mailEnUso;
             
             for (Usuario usuarioSegunCriterio : usuariosSegunCriterio) {
                 //Detecto si existen usuarios con ese nombre 

@@ -1,5 +1,6 @@
 package com.vimso.utils.vimsoutils.respuesta;
 
+import com.google.common.base.Objects;
 import com.vimso.utils.vimsoutils.comunicacion.Mensaje;
 import com.vimso.utils.vimsoutils.comunicacion.RespuestaComponentes;
 import java.io.Serializable;
@@ -61,5 +62,9 @@ public class ValidacionExcepcion extends IllegalArgumentException implements Ser
         return respuestaComponentes.equals(((ValidacionExcepcion)o).getRespuestaComponentes());
         
     }
-    
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(respuestaComponentes);
+    }
 }

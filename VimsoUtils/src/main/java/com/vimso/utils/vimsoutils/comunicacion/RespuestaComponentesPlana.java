@@ -10,14 +10,13 @@ import java.util.List;
  */
 public class RespuestaComponentesPlana implements Serializable{
 
+    private Boolean ok;
+    private List<String> mensajes = new ArrayList<>();
+    
     public RespuestaComponentesPlana() {
         ok=true;
         mensajes= new ArrayList<>();
     }
-    
-    
-    private Boolean ok;
-    private List<String> mensajes;
 
     public Boolean isOk() {
         return ok;

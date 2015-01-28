@@ -9,15 +9,14 @@ import java.io.Serializable;
  */
 public class VOut implements Serializable {
 
-    
+    private RespuestaComponentesPlana resPlain;
+
     public VOut() {
     }
-    
+
     public VOut(RespuestaComponentesPlana resPlain) {
         this.resPlain = resPlain;
     }
-
-    private RespuestaComponentesPlana resPlain; 
 
     public RespuestaComponentesPlana getResPlain() {
         return resPlain;

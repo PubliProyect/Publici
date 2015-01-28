@@ -23,7 +23,7 @@ public class PobladorBBDD1 implements IPobladorBBDD1{
     private IPermisosService  permisosService;
     
     @Override
-    public void PobladorBBDD() {
+    public void pobladorBBDD() {
             
             cargarUsuarios();            
             cargarRoles();
