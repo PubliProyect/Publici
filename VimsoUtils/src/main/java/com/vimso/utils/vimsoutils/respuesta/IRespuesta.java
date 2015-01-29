@@ -12,8 +12,6 @@ public interface IRespuesta extends Serializable {
     
     boolean isOK();
     
-    boolean isMultiple();
-    
     List<Mensaje> getMensajes();
 
 }

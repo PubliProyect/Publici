@@ -1,6 +1,7 @@
 package com.vimso.utils.vimsoutils.comunicacion;
 
 import com.google.common.base.Objects;
+import com.vimso.utils.vimsoutils.respuesta.IRespuesta;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -10,7 +11,7 @@ import java.util.List;
  *
  * @author vimso
  */
-public class RespuestaComponentes extends RespuestaComponentesAbstrac implements Serializable {
+public class RespuestaComponentes implements Serializable,IRespuesta {
 
     private List<Mensaje> mensajes = new ArrayList<Mensaje>();
     private Boolean ok;
@@ -52,16 +53,6 @@ public class RespuestaComponentes extends RespuestaComponentesAbstrac implements
 
     public List<Mensaje> getMensajes() {
         return mensajes;
-    }
-
-    public String obtenerClaveMensajes() {
-        if (mensajes == null || mensajes.isEmpty()) {
-            return null;
-        }
-        if (mensajes.size() > 1) {
-            throw new IllegalStateException("Hay más de una clave mensaje");
-        }
-        return mensajes.get(0).getClaveMensaje();
     }
 
     public void addMensaje(String mensaje) {
@@ -117,14 +108,11 @@ public class RespuestaComponentes extends RespuestaComponentesAbstrac implements
 
     @Override
     public int hashCode() {
-        return Objects.hashCode(mensajes);
+        return Objects.hashCode(mensajes,ok);
     }
 
-    private boolean isMensajesIguales(RespuestaComponentes respuestaInterna, RespuestaComponentes respuestaExterna) {
-        if (respuestaExterna.getMensajes() != null && respuestaInterna.getMensajes() != null) {
-            return Arrays.equals(respuestaExterna.getMensajes().toArray(), respuestaInterna.getMensajes().toArray());
-        } else {
-            return respuestaExterna.getMensajes() == null && respuestaInterna.getMensajes() == null;
-        }
+    private boolean isMensajesIguales(RespuestaComponentes respuestaInterna, RespuestaComponentes respuestaExterna) {       
+              
+        return respuestaInterna.getMensajes().equals(respuestaExterna.getMensajes());
     }
 }

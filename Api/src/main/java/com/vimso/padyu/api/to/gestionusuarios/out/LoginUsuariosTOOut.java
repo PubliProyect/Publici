@@ -1,5 +1,6 @@
 package com.vimso.padyu.api.to.gestionusuarios.out;
 
+import com.google.common.base.Objects;
 import com.vimso.utils.vimsoutils.comunicacion.RespuestaComponentes;
 
 /**
@@ -39,11 +40,19 @@ public class LoginUsuariosTOOut {
         
         LoginUsuariosTOOut externo=(LoginUsuariosTOOut)o;
         
-        return getRespuesta().equals(externo.getRespuesta());
+        return isRespuestasIguales(externo.getRespuesta());
+    }
+    
+    private boolean isRespuestasIguales(RespuestaComponentes respuesta) {
+        if (respuesta==null && respuesta==null ) {
+            return true;
+        }        
+        return getRespuesta().equals(respuesta); 
     }
 
     @Override
     public int hashCode() {
-        return getRespuesta().hashCode(); 
+        return Objects.hashCode(getRespuesta());
     }
+
 }

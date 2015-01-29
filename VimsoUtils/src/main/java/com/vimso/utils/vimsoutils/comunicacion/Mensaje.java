@@ -2,7 +2,7 @@ package com.vimso.utils.vimsoutils.comunicacion;
 
 import com.google.common.base.Objects;
 import java.io.Serializable;
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -33,9 +33,13 @@ public class Mensaje implements Serializable {
     public static final String PASSWORD_CARACTERES_MINIMOS = "PASSWORD_CARACTERES_MINIMOS";
     public static final String MAIL_DIFERENTES = "MAIL_DIFERENTES";
 
-    private String claveMensaje;
-    private List<String> parametros;
 //</editor-fold>
+    
+    private String claveMensaje;
+    private List<String> parametros = new ArrayList<>();
+    
+    public Mensaje() {
+    }
 
     public Mensaje(String claveMensaje, List<String> parametros) {
         this.claveMensaje = claveMensaje;
@@ -66,33 +70,47 @@ public class Mensaje implements Serializable {
     //</editor-fold>
     @Override
     public boolean equals(Object o) {
+        
+        if (!isObjetoTipoComparable(o)) {
+            return false;
+        }
+        
+        Mensaje mensajeExterno = (Mensaje) o;
+        
+        if ( !isClaveMensajesIguales(claveMensaje, mensajeExterno.getClaveMensaje())) {
+            return false;
+        }
+        
+        return isParametrosIguales(getParametros(),mensajeExterno.getParametros());
+    }
+    
+    private boolean isObjetoTipoComparable(Object o) {
         if (o == null) {
             return false;
         }
 
-        if (!(o instanceof Mensaje)) {
-            return false;
-        }
-        Mensaje mensajeExterno = (Mensaje) o;
-
-        if (claveMensaje != null && mensajeExterno.getClaveMensaje() != null && !claveMensaje.equals(mensajeExterno.getClaveMensaje())) {
-            return false;
-        }
-
-        return isMismoParametro(this, mensajeExterno);
-
+        return o instanceof Mensaje;
     }
 
-    private boolean isMismoParametro(Mensaje interno, Mensaje mensajeExterno) {
-        if (mensajeExterno.getParametros() != null && interno.getParametros() != null) {
-            return Arrays.equals(mensajeExterno.getParametros().toArray(), interno.getParametros().toArray());
-        } else {
-            return mensajeExterno.getParametros() == null && interno.getParametros() == null;
+    private boolean isClaveMensajesIguales(String claveMensaje, String mensajeExterno) {
+
+        if (claveMensaje != null && mensajeExterno != null && !claveMensaje.equals(mensajeExterno)) {
+            return false;
         }
+
+        return !((claveMensaje == null || mensajeExterno == null) && !(claveMensaje == null && mensajeExterno == null));
     }
 
     @Override
     public int hashCode() {
         return Objects.hashCode(claveMensaje, parametros);
+    }
+
+    private boolean isParametrosIguales(List<String> parametros1, List<String> parametros2) {
+        if (parametros1== null && parametros2 == null) {
+            return true;
+        }
+        
+        return parametros1!= null && parametros1.equals(parametros2);
     }
 }
